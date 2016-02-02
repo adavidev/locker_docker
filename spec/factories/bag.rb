@@ -12,9 +12,9 @@ FactoryGirl.define do
     end
     
     factory :small_bag do
-      height 50
-      width 24
-      depth 24
+      height 18
+      width 18
+      depth 10
     end
     
     

@@ -9,7 +9,7 @@ RSpec.describe Bag, type: :model do
     end
     
     it "should create a bag" do
-      expect(Bag).to receive :create!
+      expect(Bag).to receive(:create!).and_return(Bag.create)
       Bag.check
     end
     

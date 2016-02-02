@@ -22,7 +22,7 @@ RSpec.describe Locker, type: :model do
     end
     
     it "should compare the size of the bag with the smallest locker available" do
-      expect(Locker.find_smallest_locker(build(:small_bag))).to eq(Locker.first)
+      expect(Locker.find_smallest_locker(build(:small_bag)).height).to eq(Locker::SMALL[:height])
     end
   end
 end
