@@ -8,7 +8,7 @@ There are 1000 small lockers, 1000 medium sized lockers, and 1000 large lockers 
 
 Design Decisions:
 ------
-I want to run with the assumtpion that the person tasking me with this request doesn't want the application being run to only include one static location.  If the hotel were something like a Hilton they would have an app created that could handle multiple buildings.
+I made the assumption that locker sizes and locker quanities could differ from one format. I added three sizes in the seeds and three static sizes in the Locker model. They are a little too specific for a scenario where a large hotel chain might share software between buildings.  They sure made things easy one me though :)
 
 Since the size of a bag is usually slightly more complicated than S, M, and L, I would like the app to assist the user in making the decision on whether a bag fits into a particularly sized locker.  Also, all lockers are likely not created equal.  I want to be able to assign locker size and determine whether a bag fits into a locker of the correct size.  This may not pan out, but I think it is a fun exercise.
 

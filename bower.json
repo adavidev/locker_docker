@@ -1,0 +1,23 @@
+{
+  "name": "locker-docker",
+  "homepage": "https://github.com/adavidev/locker_docker",
+  "authors": [
+    "Alan Davis <alan.davis@sage.com>"
+  ],
+  "description": "",
+  "main": "",
+  "moduleType": [],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "vendor/assets/components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "^1.4.9"
+  }
+}

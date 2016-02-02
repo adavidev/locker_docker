@@ -1,4 +1,6 @@
 class Bag < ActiveRecord::Base
+  
+  Translate = {"S" => Locker::SMALL, "M" => Locker::MEDIUM, "L" => Locker::LARGE}
     
   belongs_to :locker
   belongs_to :ticket
@@ -24,6 +26,7 @@ class Bag < ActiveRecord::Base
   class << self
   
     def check(size = {})
+      size = Translate[size] if size.class == String
       bag = Bag.create!(size)
       bag.update_attributes locker: Locker.find_smallest_locker(bag)
       return bag.ticket

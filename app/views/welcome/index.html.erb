@@ -1,0 +1,15 @@
+<div ng-controller="bagCheckController">
+  
+  <input type="button" ng-click="check('S')" value="S" />
+  <input type="button" ng-click="check('M')" value="M" />
+  <input type="button" ng-click="check('L')" value="L" />
+  
+  
+  <form novalidate class="simple-form">
+    Ticket Number: <input type="text" ng-model="number" /><br />
+    <input type="submit" ng-click="retrieve(number)" value="Retrieve Bag" />
+  </form>
+  
+  <pre ng-show="ticket.id != null">Ticket = {{ticket.id}}</pre>
+  <pre ng-show="locker.id != null">Locker Number = {{locker.id}}</pre>
+</div>
