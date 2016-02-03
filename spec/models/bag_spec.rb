@@ -13,8 +13,8 @@ RSpec.describe Bag, type: :model do
       Bag.check
     end
     
-    it "should return a ticket" do
-      expect(Bag.check).to be_a Ticket
+    it "should return the checked bag" do
+      expect(Bag.check).to be_a Bag
     end
     
     it "should assign a locker" do
