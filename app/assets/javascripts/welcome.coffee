@@ -4,7 +4,7 @@
 
 angular.module('bags', ['ngResource'])
 
-.factory('Bag', ($resource)-> 
+.factory('Bag', ['$resource', ($resource)-> 
   return $resource('/bags/:id.json', { id: '@_id' }, {
     check: {
       url: '/bags/check'
@@ -16,7 +16,7 @@ angular.module('bags', ['ngResource'])
       method: "POST"
       params: {}
     }
-  });
+  });]
 )
 
 .controller 'bagCheckController', ['$scope', 'Bag', ($scope, Bag) ->
