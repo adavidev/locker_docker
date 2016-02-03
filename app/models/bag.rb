@@ -29,7 +29,7 @@ class Bag < ActiveRecord::Base
       size = Translate[size] if size.class == String
       bag = Bag.create!(size)
       bag.update_attributes locker: Locker.find_smallest_locker(bag)
-      return bag.ticket
+      return bag
     end
     
     def retrieve(number)

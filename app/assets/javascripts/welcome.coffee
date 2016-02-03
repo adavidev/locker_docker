@@ -25,14 +25,13 @@ angular.module('bags', ['ngResource'])
   $scope.ticket = {}
 
   $scope.reset = ->
-    # $scope.user = angular.copy($scope.master)
     $scope.bag = angular.copy($scope.master)
     return
     
   $scope.check = (size)->
-    $scope.bag.size = size
-    $scope.ticket = Bag.check($scope.bag)
     $scope.reset()
+    $scope.bag.size = size
+    $scope.bag = Bag.check($scope.bag)
     return 
     
   $scope.retrieve = (number)->

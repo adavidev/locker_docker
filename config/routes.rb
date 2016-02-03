@@ -1,11 +1,9 @@
 Rails.application.routes.draw do
   get 'welcome/index'
 
-  resources :bags
+  resources :bags, only: [:show]
   post 'bags/check'
   post 'bags/retrieve'
-  
-  resources :tickets, only: [:show]
 
   root 'welcome#index'
 end

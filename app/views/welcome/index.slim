@@ -1,13 +1,53 @@
-div[ng-controller="bagCheckController"]
-  input[type="button" ng-click="check('S')" value="S"]
-  input[type="button" ng-click="check('M')" value="M"]
-  input[type="button" ng-click="check('L')" value="L"]
-  form.simple-form[novalidate]
-    |  Ticket Number: 
-    input[type="text" ng-model="number"]
-    br
-    input[type="submit" ng-click="retrieve(number)" value="Retrieve Bag"]
-  pre[ng-show="ticket.id != null"]
-    | Ticket = {{ticket.id}}
-  pre[ng-show="locker.id != null"]
-    | Locker Number = {{locker.id}}
+.stars
+.col-lg-6.col-lg-offset-3
+  .header
+    .title
+      .logo
+      .name
+        h1 Locker Docker
+    .tagline
+      h3 Need help finding some space?
+
+.pad-top.col-lg-6.col-lg-offset-3[ng-controller="bagCheckController"]
+  .panel.panel-default
+    .panel-header
+      .container-fluid
+        h3 Check a bag:
+    .panel-body
+      .row
+        .container-fluid
+          p
+            input.btn.btn-default[type="button" ng-click="check('S')" value="S"]
+            input.btn.btn-default[type="button" ng-click="check('M')" value="M"]
+            input.btn.btn-default[type="button" ng-click="check('L')" value="L"]
+      .row
+        .container-fluid
+          p
+            .well#printme[ng-show="bag.ticket_id != null"]
+              .container-fluid
+                .col-xs-6
+                  .ticket
+                    | Ticket = {{bag.ticket_id}}
+                  br
+                  | Locker = {{bag.locker_id}}
+                  br
+                .col-xs-6
+                  input.btn.btn-default[type="button" onclick="PrintElem('#printme .ticket')" value="Print Ticket"]
+  .panel.panel-default
+    .panel-header
+      .container-fluid
+        h3 Retrieve a bag:
+    .panel-body
+      .row
+        .container-fluid
+          p
+            form.simple-form[novalidate]
+              |  Ticket Number: 
+              br
+              input.btn.btn-default[type="text" ng-model="number"]
+              br
+              input.btn.btn-default[type="submit" ng-click="retrieve(number)" value="Retrieve Bag"]
+              
+              
+              .well[ng-show="locker.id != null"]
+                | Locker Number = {{locker.id}}
